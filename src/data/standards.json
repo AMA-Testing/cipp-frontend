@@ -47,7 +47,7 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "Enable-OrganizationCustomization",
-    "recommendedBy": ["CIS"]
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.ProfilePhotos",
@@ -57,7 +57,7 @@
     "docsDescription": "Controls whether users can set their own profile photos in Microsoft 365. When disabled, only User and Global administrators can update profile photos for users.",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "creatable": false,
         "label": "Select value",
@@ -121,7 +121,7 @@
         "label": "Hide self-service password reset"
       },
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "label": "Visual Template",
         "name": "standards.Branding.layoutTemplateType",
@@ -189,7 +189,7 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "Update-MgBetaAdminReportSetting -BodyParameter @{displayConcealedNames = $true}",
-    "recommendedBy": []
+    "recommendedBy": ["CIPP"]
   },
   {
     "name": "standards.DisableGuestDirectory",
@@ -202,12 +202,12 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84b1e-32c8-42b7-82bc-daa82404023b'",
-    "recommendedBy": []
+    "recommendedBy": ["CIPP"]
   },
   {
     "name": "standards.DisableBasicAuthSMTP",
     "cat": "Global Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "Disables SMTP AUTH for the organization and all users. This is the default for new tenants. ",
     "docsDescription": "Disables SMTP basic authentication for the tenant and all users with it explicitly enabled.",
     "addedComponent": [],
@@ -215,7 +215,7 @@
     "impact": "Medium Impact",
     "impactColour": "warning",
     "powershellEquivalent": "Set-TransportConfig -SmtpClientAuthenticationDisabled $true",
-    "recommendedBy": []
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.ActivityBasedTimeout",
@@ -224,7 +224,7 @@
     "helpText": "Enables and sets Idle session timeout for Microsoft 365 to 1 hour. This policy affects most M365 web apps",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "creatable": false,
         "label": "Select value",
@@ -347,7 +347,7 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "Portal or Graph API",
-    "recommendedBy": []
+    "recommendedBy": ["CIPP"]
   },
   {
     "name": "standards.PWdisplayAppInformationRequiredState",
@@ -383,7 +383,7 @@
     "docsDescription": "Sets the Authenticator Lite state to enabled. This allows users to use the Authenticator Lite built into the Outlook app instead of the full Authenticator app.",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "creatable": false,
         "label": "Select value",
@@ -417,7 +417,7 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "Update-MgBetaPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration",
-    "recommendedBy": []
+    "recommendedBy": ["CIPP"]
   },
   {
     "name": "standards.EnableHardwareOAuth",
@@ -453,7 +453,7 @@
     "docsDescription": "Enables Temporary Password generation for the tenant.",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "creatable": false,
         "label": "Select TAP Lifetime",
@@ -474,7 +474,7 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "Update-MgBetaPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration",
-    "recommendedBy": []
+    "recommendedBy": ["CIPP"]
   },
   {
     "name": "standards.PasswordExpireDisabled",
@@ -487,7 +487,7 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "Update-MgDomain",
-    "recommendedBy": ["CIS"]
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.ExternalMFATrusted",
@@ -496,7 +496,7 @@
     "helpText": "Sets the state of the Cross-tenant access setting to trust external MFA. This allows guest users to use their home tenant MFA to access your tenant.",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "creatable": false,
         "label": "Select value",
@@ -530,7 +530,7 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "Update-MgPolicyAuthorizationPolicy",
-    "recommendedBy": ["CIS"]
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.EnableAppConsentRequests",
@@ -559,7 +559,7 @@
     "docsDescription": "Sets the state of the registration campaign for the tenant. If enabled nudges users to set up the Microsoft Authenticator during sign-in.",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "creatable": false,
         "label": "Select value",
@@ -612,12 +612,12 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "Update-MgPolicyAuthorizationPolicy",
-    "recommendedBy": ["CIS"]
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.DisableSecurityGroupUsers",
     "cat": "Entra (AAD) Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "Completely disables the creation of security groups by users. This also breaks the ability to manage groups themselves, or create Teams",
     "addedComponent": [],
     "label": "Disable Security Group creation by users",
@@ -629,7 +629,7 @@
   {
     "name": "standards.LegacyMFACleanup",
     "cat": "Entra (AAD) Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "This standard currently does not function and can be safely disabled",
     "addedComponent": [],
     "label": "Remove Legacy MFA if SD or CA is active",
@@ -641,7 +641,7 @@
   {
     "name": "standards.DisableSelfServiceLicenses",
     "cat": "Entra (AAD) Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "This standard disables all self service licenses and enables all exclusions",
     "addedComponent": [
       {
@@ -660,14 +660,14 @@
   {
     "name": "standards.DisableGuests",
     "cat": "Entra (AAD) Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "Blocks login for guest users that have not logged in for 90 days",
     "addedComponent": [],
     "label": "Disable Guest accounts that have not logged on for 90 days",
     "impact": "Medium Impact",
     "impactColour": "warning",
     "powershellEquivalent": "Graph API",
-    "recommendedBy": []
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.OauthConsent",
@@ -687,7 +687,7 @@
     "impact": "Medium Impact",
     "impactColour": "warning",
     "powershellEquivalent": "Update-MgPolicyAuthorizationPolicy",
-    "recommendedBy": ["CIS"]
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.OauthConsentLowSec",
@@ -704,7 +704,7 @@
   {
     "name": "standards.GuestInvite",
     "cat": "Entra (AAD) Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "This setting controls who can invite guests to your directory to collaborate on resources secured by your company, such as SharePoint sites or Azure resources.",
     "addedComponent": [
       {
@@ -767,7 +767,7 @@
   {
     "name": "standards.UndoOauth",
     "cat": "Entra (AAD) Standards",
-    "tag": ["highimpact"],
+    "tag": [],
     "helpText": "Disables App consent and set to Allow user consent for apps",
     "addedComponent": [],
     "label": "Undo App Consent Standard",
@@ -779,7 +779,7 @@
   {
     "name": "standards.SecurityDefaults",
     "cat": "Entra (AAD) Standards",
-    "tag": ["highimpact"],
+    "tag": [],
     "helpText": "Enables security defaults for the tenant, for newer tenants this is enabled by default. Do not enable this feature if you use Conditional Access.",
     "docsDescription": "Enables SD for the tenant, which disables all forms of basic authentication and enforces users to configure MFA. Users are only prompted for MFA when a logon is considered 'suspect' by Microsoft.",
     "addedComponent": [],
@@ -792,7 +792,7 @@
   {
     "name": "standards.DisableSMS",
     "cat": "Entra (AAD) Standards",
-    "tag": ["highimpact"],
+    "tag": [],
     "helpText": "This blocks users from using SMS as an MFA method. If a user only has SMS as a MFA method, they will be unable to log in.",
     "docsDescription": "Disables SMS as an MFA method for the tenant. If a user only has SMS as a MFA method, they will be unable to sign in.",
     "addedComponent": [],
@@ -805,7 +805,7 @@
   {
     "name": "standards.DisableVoice",
     "cat": "Entra (AAD) Standards",
-    "tag": ["highimpact"],
+    "tag": [],
     "helpText": "This blocks users from using Voice call as an MFA method. If a user only has Voice as a MFA method, they will be unable to log in.",
     "docsDescription": "Disables Voice call as an MFA method for the tenant. If a user only has Voice call as a MFA method, they will be unable to sign in.",
     "addedComponent": [],
@@ -818,7 +818,7 @@
   {
     "name": "standards.DisableEmail",
     "cat": "Entra (AAD) Standards",
-    "tag": ["highimpact"],
+    "tag": [],
     "helpText": "This blocks users from using email as an MFA method. This disables the email OTP option for guest users, and instead prompts them to create a Microsoft account.",
     "addedComponent": [],
     "label": "Disables Email as an MFA method",
@@ -830,7 +830,7 @@
   {
     "name": "standards.Disablex509Certificate",
     "cat": "Entra (AAD) Standards",
-    "tag": ["highimpact"],
+    "tag": [],
     "helpText": "This blocks users from using Certificates as an MFA method.",
     "docsDescription": "",
     "addedComponent": [],
@@ -843,7 +843,7 @@
   {
     "name": "standards.DisableQRCodePin",
     "cat": "Entra (AAD) Standards",
-    "tag": ["highimpact"],
+    "tag": [],
     "helpText": "This blocks users from using QR Code Pin as an MFA method. If a user only has QR Code Pin as a MFA method, they will be unable to log in.",
     "docsDescription": "Disables QR Code Pin as an MFA method for the tenant. If a user only has QR Code Pin as a MFA method, they will be unable to sign in.",
     "addedComponent": [],
@@ -856,7 +856,7 @@
   {
     "name": "standards.PerUserMFA",
     "cat": "Entra (AAD) Standards",
-    "tag": ["highimpact"],
+    "tag": [],
     "helpText": "Enables per user MFA for all users.",
     "addedComponent": [],
     "label": "Enables per user MFA for all users.",
@@ -905,7 +905,7 @@
     "docsDescription": "Sets the global quarantine notification interval for the tenant. This is the time between the quarantine notification emails are sent out to users. Default is 24 hours.",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "label": "Select value",
         "name": "standards.GlobalQuarantineNotifications.NotificationInterval",
@@ -942,7 +942,7 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "Set-RemoteDomain -Identity 'Default' -TNEFEnabled $false",
-    "recommendedBy": []
+    "recommendedBy": ["CIPP"]
   },
   {
     "name": "standards.FocusedInbox",
@@ -952,7 +952,7 @@
     "docsDescription": "Sets the default Focused Inbox state for the tenant. This can be overridden by the user in their Outlook settings. For more information, see [Microsoft's documentation.](https://support.microsoft.com/en-us/office/focused-inbox-for-outlook-f445ad7f-02f4-4294-a82e-71d8964e3978)",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "label": "Select value",
         "name": "standards.FocusedInbox.state",
@@ -982,7 +982,7 @@
     "docsDescription": "Sets the default state for Cloud Message Recall for the tenant. By default this is enabled. You can read more about the feature [here.](https://techcommunity.microsoft.com/t5/exchange-team-blog/cloud-based-message-recall-in-exchange-online/ba-p/3744714)",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "label": "Select value",
         "name": "standards.CloudMessageRecall.state",
@@ -1049,7 +1049,7 @@
     "docsDescription": "Adds or removes indicators to e-mail messages received from external senders in Outlook. You can read more about this feature on [Microsoft's Exchange Team Blog.](https://techcommunity.microsoft.com/t5/exchange-team-blog/native-external-sender-callouts-on-email-in-outlook/ba-p/2250098)",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "label": "Select value",
         "name": "standards.SpoofWarn.state",
@@ -1068,8 +1068,8 @@
     "label": "Enable or disable 'external' warning in Outlook",
     "impact": "Low Impact",
     "impactColour": "info",
-    "powershellEquivalent": "et-ExternalInOutlook \u2013Enabled $true or $false",
-    "recommendedBy": ["CIS"]
+    "powershellEquivalent": "Set-ExternalInOutlook \u2013Enabled $true or $false",
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.EnableMailTips",
@@ -1089,7 +1089,7 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "Set-OrganizationConfig",
-    "recommendedBy": ["CIS"]
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.TeamsMeetingsByDefault",
@@ -1098,7 +1098,7 @@
     "helpText": "Sets the default state for automatically turning meetings into Teams meetings for the tenant. This can be overridden by the user in Outlook.",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "label": "Select value",
         "name": "standards.TeamsMeetingsByDefault.state",
@@ -1143,7 +1143,7 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "Rotate-DkimSigningConfig",
-    "recommendedBy": ["CIS"]
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.AddDKIM",
@@ -1155,7 +1155,7 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "New-DkimSigningConfig and Set-DkimSigningConfig",
-    "recommendedBy": ["CIS"]
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.EnableMailboxAuditing",
@@ -1168,7 +1168,7 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "Set-OrganizationConfig -AuditDisabled $false",
-    "recommendedBy": ["CIS"]
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.SendReceiveLimitTenant",
@@ -1208,10 +1208,10 @@
     },
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "label": "Select Sharing Level",
-        "name": "standards.calDefault.permissionlevel",
+        "name": "standards.calDefault.permissionLevel",
         "options": [
           {
             "label": "Owner - The user can create, read, edit, and delete all items in the folder, and create subfolders. The user is both folder owner and folder contact.",
@@ -1280,16 +1280,22 @@
     "recommendedBy": ["CIS"]
   },
   {
-    "name": "standardsAutoAddProxy",
+    "name": "standards.AutoAddProxy",
     "cat": "Exchange Standards",
     "tag": ["CIS"],
     "helpText": "Automatically adds all available domains as a proxy address.",
-    "docsDescription": "Automatically finds all available domain names in the tenant, and tries to add proxyaddresses based on the users UPN to each of these.",
+    "docsDescription": "Automatically finds all available domain names in the tenant, and tries to add proxy addresses based on the user's UPN to each of these.",
     "addedComponent": [],
     "label": "Automatically deploy proxy addresses",
     "impact": "Medium Impact",
     "impactColour": "warning",
-    "powershellEquivalent": "set-mailbox -emailaddresses @{add=$emailaddress}"
+    "powershellEquivalent": "Set-Mailbox -EmailAddresses @{add=$EmailAddress}",
+    "recommendedBy": [],
+    "disabledFeatures": {
+      "report": true,
+      "warn": true,
+      "remediate": false
+    }
   },
   {
     "name": "standards.DisableAdditionalStorageProviders",
@@ -1305,13 +1311,32 @@
     "recommendedBy": ["CIS"]
   },
   {
+    "name": "standards.AntiSpamSafeList",
+    "cat": "Defender Standards",
+    "tag": [],
+    "helpText": "Sets the anti-spam connection filter policy option 'safe list' in Defender.",
+    "docsDescription": "Sets [Microsoft's built-in 'safe list'](https://learn.microsoft.com/en-us/powershell/module/exchange/set-hostedconnectionfilterpolicy?view=exchange-ps#-enablesafelist) in the anti-spam connection filter policy, rather than setting a custom safe/block list of IPs.",
+    "addedComponent": [
+      {
+        "type": "switch",
+        "name": "standards.AntiSpamSafeList.EnableSafeList",
+        "label": "Enable Safe List"
+      }
+    ],
+    "label": "Set Anti-Spam Connection Filter Safe List",
+    "impact": "Medium Impact",
+    "impactColour": "info",
+    "powershellEquivalent": "Set-HostedConnectionFilterPolicy \"Default\" -EnableSafeList $true",
+    "recommendedBy": []
+  },
+  {
     "name": "standards.ShortenMeetings",
     "cat": "Exchange Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "Sets the shorten meetings settings on a tenant level. This will shorten meetings by the selected amount of minutes. Valid values are 0 to 29. Short meetings are under 60 minutes, long meetings are over 60 minutes.",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "label": "Select value",
         "name": "standards.ShortenMeetings.ShortenEventScopeDefault",
@@ -1352,12 +1377,12 @@
   {
     "name": "standards.Bookings",
     "cat": "Exchange Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "Sets the state of Bookings on the tenant. Bookings is a scheduling tool that allows users to book appointments with others both internal and external.",
     "docsDescription": "",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "label": "Select value",
         "name": "standards.Bookings.state",
@@ -1395,7 +1420,7 @@
   {
     "name": "standards.SafeSendersDisable",
     "cat": "Exchange Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "Loops through all users and removes the Safe Senders list. This is to prevent SPF bypass attacks, as the Safe Senders list is not checked by SPF.",
     "addedComponent": [],
     "disabledFeatures": {
@@ -1407,12 +1432,12 @@
     "impact": "Medium Impact",
     "impactColour": "warning",
     "powershellEquivalent": "Set-MailboxJunkEmailConfiguration",
-    "recommendedBy": []
+    "recommendedBy": ["CIPP"]
   },
   {
     "name": "standards.DelegateSentItems",
     "cat": "Exchange Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "Sets emails sent as and on behalf of shared mailboxes to also be stored in the shared mailbox sent items folder",
     "docsDescription": "This makes sure that e-mails sent from shared mailboxes or delegate mailboxes, end up in the mailbox of the shared/delegate mailbox instead of the sender, allowing you to keep replies in the same mailbox as the original e-mail.",
     "addedComponent": [
@@ -1431,7 +1456,7 @@
   {
     "name": "standards.SendFromAlias",
     "cat": "Exchange Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "Enables the ability for users to send from their alias addresses.",
     "docsDescription": "Allows users to change the 'from' address to any set in their Azure AD Profile.",
     "addedComponent": [],
@@ -1439,17 +1464,17 @@
     "impact": "Medium Impact",
     "impactColour": "warning",
     "powershellEquivalent": "Set-Mailbox",
-    "recommendedBy": []
+    "recommendedBy": ["CIPP"]
   },
   {
     "name": "standards.UserSubmissions",
     "cat": "Exchange Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "Set the state of the spam submission button in Outlook",
     "docsDescription": "Set the state of the built-in Report button in Outlook. This gives the users the ability to report emails as spam or phish.",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "label": "Select value",
         "name": "standards.UserSubmissions.state",
@@ -1488,7 +1513,7 @@
     "impact": "Medium Impact",
     "impactColour": "warning",
     "powershellEquivalent": "Get-Mailbox & Update-MgUser",
-    "recommendedBy": ["CIS"]
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.EXODisableAutoForwarding",
@@ -1501,12 +1526,12 @@
     "impact": "High Impact",
     "impactColour": "danger",
     "powershellEquivalent": "Set-HostedOutboundSpamFilterPolicy -AutoForwardingMode 'Off'",
-    "recommendedBy": ["CIS"]
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.RetentionPolicyTag",
     "cat": "Exchange Standards",
-    "tag": ["highimpact"],
+    "tag": [],
     "helpText": "Creates a CIPP - Deleted Items retention policy tag that permanently deletes items in the Deleted Items folder after X days.",
     "docsDescription": "Creates a CIPP - Deleted Items retention policy tag that permanently deletes items in the Deleted Items folder after X days.",
     "addedComponent": [
@@ -1781,12 +1806,7 @@
   {
     "name": "standards.SafeAttachmentPolicy",
     "cat": "Defender Standards",
-    "tag": [
-      "CIS",
-      "mdo_safedocuments",
-      "mdo_commonattachmentsfilter",
-      "mdo_safeattachmentpolicy"
-    ],
+    "tag": ["CIS", "mdo_safedocuments", "mdo_commonattachmentsfilter", "mdo_safeattachmentpolicy"],
     "helpText": "This creates a Safe Attachment policy",
     "addedComponent": [
       {
@@ -1949,7 +1969,7 @@
   {
     "name": "standards.SpamFilterPolicy",
     "cat": "Defender Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "This standard creates a Spam filter policy similar to the default strict policy.",
     "addedComponent": [
       {
@@ -2163,7 +2183,7 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "Graph API",
-    "recommendedBy": []
+    "recommendedBy": ["CIPP"]
   },
   {
     "name": "standards.intuneBrandingProfile",
@@ -2276,13 +2296,14 @@
   {
     "name": "standards.intuneDeviceReg",
     "cat": "Intune Standards",
-    "tag": ["mediumimpact"],
-    "helpText": "sets the maximum number of devices that can be registered by a user. A value of 0 disables device registration by users",
+    "tag": [],
+    "helpText": "Sets the maximum number of devices that can be registered by a user. A value of 0 disables device registration by users",
     "addedComponent": [
       {
         "type": "number",
         "name": "standards.intuneDeviceReg.max",
-        "label": "Maximum devices (Enter 2147483647 for unlimited.)"
+        "label": "Maximum devices (Enter 2147483647 for unlimited.)",
+        "required": true
       }
     ],
     "label": "Set Maximum Number of Devices per user",
@@ -2294,7 +2315,7 @@
   {
     "name": "standards.intuneRequireMFA",
     "cat": "Intune Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "Requires MFA for all users to register devices with Intune. This is useful when not using Conditional Access.",
     "label": "Require Multifactor Authentication to register or join devices with Microsoft Entra",
     "impact": "Medium Impact",
@@ -2310,7 +2331,7 @@
     "docsDescription": "When a OneDrive user gets deleted, the personal SharePoint site is saved for selected amount of time that data can be retrieved from it.",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "name": "standards.DeletedUserRentention.Days",
         "label": "Retention time (Default 30 days)",
@@ -2369,7 +2390,7 @@
     "label": "Set deleted user retention time in OneDrive",
     "impact": "Low Impact",
     "impactColour": "info",
-    "powershellEquivalent": "Update-MgBetaAdminSharepointSetting",
+    "powershellEquivalent": "Update-MgBetaAdminSharePointSetting",
     "recommendedBy": []
   },
   {
@@ -2387,7 +2408,7 @@
     "label": "Set Default Timezone for Tenant",
     "impact": "Low Impact",
     "impactColour": "info",
-    "powershellEquivalent": "Update-MgBetaAdminSharepointSetting",
+    "powershellEquivalent": "Update-MgBetaAdminSharePointSetting",
     "recommendedBy": []
   },
   {
@@ -2412,7 +2433,7 @@
     "impact": "Low Impact",
     "impactColour": "info",
     "powershellEquivalent": "Set-SPOTenant -DisallowInfectedFileDownload $true",
-    "recommendedBy": ["CIS 3.0"]
+    "recommendedBy": ["CIS 3.0", "CIPP"]
   },
   {
     "name": "standards.SPDisableLegacyWorkflows",
@@ -2436,7 +2457,7 @@
     "impact": "Medium Impact",
     "impactColour": "warning",
     "powershellEquivalent": "Set-SPOTenant -DefaultSharingLinkType Direct",
-    "recommendedBy": ["CIS 3.0"]
+    "recommendedBy": ["CIS 3.0", "CIPP"]
   },
   {
     "name": "standards.SPExternalUserExpiration",
@@ -2460,24 +2481,24 @@
     "name": "standards.SPEmailAttestation",
     "cat": "SharePoint Standards",
     "tag": ["CIS"],
-    "helpText": "Ensure reauthentication with verification code is restricted",
+    "helpText": "Ensure re-authentication with verification code is restricted",
     "addedComponent": [
       {
         "type": "number",
         "name": "standards.SPEmailAttestation.Days",
-        "label": "Require reauth every X Days (Default 15)"
+        "label": "Require re-authentication every X Days (Default 15)"
       }
     ],
-    "label": "Require reauthentication with verification code",
+    "label": "Require re-authentication with verification code",
     "impact": "Medium Impact",
     "impactColour": "warning",
     "powershellEquivalent": "Set-SPOTenant -EmailAttestationRequired $true -EmailAttestationReAuthDays 15",
-    "recommendedBy": ["CIS 3.0"]
+    "recommendedBy": ["CIS 3.0", "CIPP"]
   },
   {
     "name": "standards.DisableAddShortcutsToOneDrive",
     "cat": "SharePoint Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "If disabled, the button Add shortcut to OneDrive will be removed and users in the tenant will no longer be able to add new shortcuts to their OneDrive. Existing shortcuts will remain functional",
     "addedComponent": [
       {
@@ -2507,7 +2528,7 @@
   {
     "name": "standards.SPSyncButtonState",
     "cat": "SharePoint Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "If disabled, users in the tenant will no longer be able to use the Sync button to sync SharePoint content on all sites. However, existing synced content will remain functional on the user's computer.",
     "addedComponent": [
       {
@@ -2545,7 +2566,7 @@
     "impact": "Medium Impact",
     "impactColour": "warning",
     "powershellEquivalent": "Set-SPOTenant -LegacyAuthProtocolsEnabled $false",
-    "recommendedBy": ["CIS"]
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.sharingCapability",
@@ -2554,7 +2575,7 @@
     "helpText": "Sets the default sharing level for OneDrive and SharePoint. This is a tenant wide setting and overrules any settings set on the site level",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "label": "Select Sharing Level",
         "name": "standards.sharingCapability.Level",
@@ -2581,8 +2602,8 @@
     "label": "Set Sharing Level for OneDrive and SharePoint",
     "impact": "High Impact",
     "impactColour": "danger",
-    "powershellEquivalent": "Update-MgBetaAdminSharepointSetting",
-    "recommendedBy": ["CIS"]
+    "powershellEquivalent": "Update-MgBetaAdminSharePointSetting",
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.DisableReshare",
@@ -2594,26 +2615,26 @@
     "label": "Disable Resharing by External Users",
     "impact": "High Impact",
     "impactColour": "danger",
-    "powershellEquivalent": "Update-MgBetaAdminSharepointSetting",
-    "recommendedBy": ["CIS"]
+    "powershellEquivalent": "Update-MgBetaAdminSharePointSetting",
+    "recommendedBy": ["CIS", "CIPP"]
   },
   {
     "name": "standards.DisableUserSiteCreate",
     "cat": "SharePoint Standards",
-    "tag": ["highimpact"],
+    "tag": [],
     "helpText": "Disables users from creating new SharePoint sites",
     "docsDescription": "Disables standard users from creating SharePoint sites, also disables the ability to fully create teams",
     "addedComponent": [],
     "label": "Disable site creation by standard users",
     "impact": "High Impact",
     "impactColour": "danger",
-    "powershellEquivalent": "Update-MgAdminSharepointSetting",
+    "powershellEquivalent": "Update-MgAdminSharePointSetting",
     "recommendedBy": []
   },
   {
     "name": "standards.ExcludedfileExt",
     "cat": "SharePoint Standards",
-    "tag": ["highimpact"],
+    "tag": [],
     "helpText": "Sets the file extensions that are excluded from syncing with OneDrive. These files will be blocked from upload. '*.' is automatically added to the extension and can be omitted.",
     "addedComponent": [
       {
@@ -2625,31 +2646,31 @@
     "label": "Exclude File Extensions from Syncing",
     "impact": "High Impact",
     "impactColour": "danger",
-    "powershellEquivalent": "Update-MgAdminSharepointSetting",
+    "powershellEquivalent": "Update-MgAdminSharePointSetting",
     "recommendedBy": []
   },
   {
     "name": "standards.disableMacSync",
     "cat": "SharePoint Standards",
-    "tag": ["highimpact"],
+    "tag": [],
     "helpText": "Disables the ability for Mac devices to sync with OneDrive.",
     "addedComponent": [],
     "label": "Do not allow Mac devices to sync using OneDrive",
     "impact": "High Impact",
     "impactColour": "danger",
-    "powershellEquivalent": "Update-MgAdminSharepointSetting",
+    "powershellEquivalent": "Update-MgAdminSharePointSetting",
     "recommendedBy": []
   },
   {
     "name": "standards.unmanagedSync",
     "cat": "SharePoint Standards",
-    "tag": ["highimpact"],
+    "tag": [],
     "helpText": "The unmanaged Sync standard has been temporarily disabled and does nothing.",
     "addedComponent": [],
     "label": "Only allow users to sync OneDrive from AAD joined devices",
     "impact": "High Impact",
     "impactColour": "danger",
-    "powershellEquivalent": "Update-MgAdminSharepointSetting",
+    "powershellEquivalent": "Update-MgAdminSharePointSetting",
     "recommendedBy": []
   },
   {
@@ -2659,7 +2680,7 @@
     "helpText": "Restricts sharing to only users with the specified domain. This is useful for organizations that only want to share with their own domain.",
     "addedComponent": [
       {
-        "type": "select",
+        "type": "autoComplete",
         "multiple": false,
         "name": "standards.sharingDomainRestriction.Mode",
         "label": "Limit external sharing by domains",
@@ -2688,7 +2709,7 @@
     "label": "Restrict sharing to a specific domain",
     "impact": "High Impact",
     "impactColour": "danger",
-    "powershellEquivalent": "Update-MgAdminSharepointSetting",
+    "powershellEquivalent": "Update-MgAdminSharePointSetting",
     "recommendedBy": []
   },
   {
@@ -2849,7 +2870,7 @@
   {
     "name": "standards.TeamsExternalAccessPolicy",
     "cat": "Teams Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "Sets the properties of the Global external access policy.",
     "docsDescription": "Sets the properties of the Global external access policy. External access policies determine whether or not your users can: 1) communicate with users who have Session Initiation Protocol (SIP) accounts with a federated organization; 2) communicate with users who are using custom applications built with Azure Communication Services; 3) access Skype for Business Server over the Internet, without having to log on to your internal network; 4) communicate with users who have SIP accounts with a public instant messaging (IM) provider such as Skype; and, 5) communicate with people who are using Teams with an account that's not managed by an organization.",
     "addedComponent": [
@@ -2878,7 +2899,7 @@
   {
     "name": "standards.TeamsFederationConfiguration",
     "cat": "Teams Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "Sets the properties of the Global federation configuration.",
     "docsDescription": "Sets the properties of the Global federation configuration. Federation configuration settings determine whether or not your users can communicate with users who have SIP accounts with a federated organization.",
     "addedComponent": [
@@ -2934,7 +2955,7 @@
   {
     "name": "standards.TeamsMessagingPolicy",
     "cat": "Teams Standards",
-    "tag": ["mediumimpact"],
+    "tag": [],
     "helpText": "Sets the properties of the Global messaging policy.",
     "docsDescription": "Sets the properties of the Global messaging policy. Messaging policies control which chat and channel messaging features are available to users in Teams.",
     "addedComponent": [
